@@ -1,0 +1,269 @@
+/* Căn chỉnh cơ bản của trang */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #74ebd5, #ACB6E5); /* Màu nền gradient */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Đặt các phần tử ở phần trên của trang */
+    height: 100vh;
+    overflow: auto; /* Đảm bảo nội dung có thể cuộn nếu cần */
+}
+
+/* Thanh điều hướng */
+.navbar {
+    display: flex;
+    background-color: #333;
+    justify-content: space-around;
+    padding: 14px 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed; /* Đặt thanh điều hướng cố định ở trên cùng */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Đảm bảo thanh điều hướng nằm trên các phần tử khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ cho thanh điều hướng */
+}
+
+/* Liên kết trong thanh điều hướng */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block; /* Đảm bảo liên kết bao phủ toàn bộ khoảng cách */
+    text-align: center;
+}
+
+/* Hiệu ứng hover cho liên kết trong thanh điều hướng */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Container chính */
+.container {
+    max-width: 800px;
+    margin: 80px auto 20px; /* Thêm margin-top lớn hơn để tránh bị che khuất bởi thanh điều hướng */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box; /* Đảm bảo container không vượt quá chiều rộng của trang */
+}
+
+/* Khung thông tin */
+.info-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Khoảng cách giữa các phần tử trong info-box */
+    margin-bottom: 20px;
+}
+
+.info-box div {
+    background: #e3e3e3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    flex: 1; /* Các phần tử trong info-box chiếm không gian đều */
+    text-align: center;
+}
+
+/* Container biểu đồ */
+.chart-container {
+    margin: 20px 0;
+}
+
+/* Tùy chỉnh */
+.customization {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Khoảng cách giữa các hình ảnh */
+    margin-top: 20px;
+}
+
+.customization img {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.customization img:hover {
+    transform: scale(1.1);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Bảng lịch sử thiết bị */
+#device-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#device-history-table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+#device-history-body tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hiệu ứng cho đèn */
+#light-icon {
+    transition: filter 0.3s ease; /* Hiệu ứng chuyển màu cho đèn */
+}
+
+/* Khi đèn bật */
+#light-icon.on {
+    filter: brightness(1.5) hue-rotate(60deg); /* Chuyển từ xanh sang vàng */
+}
+
+/* Điều hòa di chuyển qua lại */
+#ac-icon.moving {
+    animation: move 1s ease-in-out infinite alternate; /* Hiệu ứng di chuyển qua lại */
+}
+
+@keyframes move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+
+/* Quạt xoay */
+#fan-icon.rotating {
+    animation: rotate 1s linear infinite; /* Hiệu ứng xoay cho quạt */
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Phân trang */
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #555;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+/* Trạng thái thiết bị */
+.device-status {
+    display: flex; /* Sử dụng flexbox để căn chỉnh hàng ngang */
+    justify-content: space-between; /* Căn giữa các thiết bị với khoảng cách đều */
+    gap: 20px; /* Khoảng cách giữa các thiết bị */
+    margin-top: 20px;
+}
+
+/* Thiết bị */
+.device {
+    flex: 1; /* Các thiết bị chiếm đều chiều rộng */
+    text-align: center;
+}
+
+/* Đảm bảo hình ảnh thiết bị không vượt quá chiều rộng */
+.device img {
+    width: 100px; /* Điều chỉnh kích thước hình ảnh nếu cần */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+
+/* Các lớp trạng thái thiết bị */
+.device-status {
+    display: flex; /* Sử dụng flexbox để căn chỉnh hàng ngang */
+    justify-content: space-between; /* Căn giữa các thiết bị với khoảng cách đều */
+    gap: 20px; /* Khoảng cách giữa các thiết bị */
+    margin-top: 20px;
+}
+
+
+/* Trạng thái bật */
+.device-status-text.on {
+    color: green;
+}
+
+/* Trạng thái tắt */
+.device-status-text.off {
+    color: red;
+}
+
+/* Các lớp màu cho nhiệt độ */
+.temp-low {
+    color: #00f; /* Màu xanh dương cho nhiệt độ thấp */
+}
+
+.temp-medium {
+    color: #0f0; /* Màu xanh lá cây cho nhiệt độ trung bình */
+}
+
+.temp-high {
+    color: #f00; /* Màu đỏ cho nhiệt độ cao */
+}
+
+/* Cập nhật các phần tử hiển thị nhiệt độ */
+#temp-box {
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Thay đổi màu sắc mượt mà */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều Chỉnh Thiết Bị</title>
+    <link rel="stylesheet" href="../css/iotcss.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="iot.html">Dash board</a>
+    <a href="device-settings.html">Action History</a>
+    <a href="iot2.html">Data Sensor</a>
+    <a href="iot3.html">Profile</a>
+</div>
+
+<div class="container">
+    <h1>Lịch Sử Hoạt Động Thiết Bị</h1>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Tìm kiếm theo thời gian">
+        <button id="search-button">Search</button>
+    </div>
+
+    <table id="device-settings-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Device</th>
+                <th>Status</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody id="device-settings-body">
+            <!-- Dữ liệu sẽ được chèn vào đây bởi JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button id="prev-page" disabled>« Previous Page</button>
+        <span id="page-info">Page 1 / 1</span>
+        <button id="next-page" disabled>Next Page »</button>
+    </div>
+
+    <a href="../html/iot.html">Back to Dashboard</a>
+</div>
+
+<script src="../js/device-settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "iot", 
+  "version": "1.0.0",
+  "main": "iot.html",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "mqtt": "^5.10.1",
+    "express": "^4.21.1"
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data</title>
+    <link rel="stylesheet" href="../css/iot2.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="iot.html">Dashboard</a>
+    <a href="device-settings.html">Action History</a>
+    <a href="iot2.html">Sensor Data</a>
+    <a href="iot3.html">Profile</a>
+</div>
+
+<div class="container">
+    <h2>Sensor Data</h2>
+
+    <div class="search-container">
+        <div class="dropdown">
+            <button class="dropdown-button">Select Search Field</button>
+            <div class="dropdown-content">
+                <a href="#" data-field="all">All</a>
+                <a href="#" data-field="temperature">Temperature (°C)</a>
+                <a href="#" data-field="humidity">Humidity (%)</a>
+                <a href="#" data-field="light_level">Light (%)</a> <!-- Đổi tên trường ánh sáng cho đúng -->
+                <a href="#" data-field="timestamp">Time</a> <!-- Đổi tên trường thời gian cho đúng -->
+            </div>
+        </div>
+        <input type="text" id="search-value" placeholder="Enter search value">
+        <button type="button" id="apply-filter">Search</button>
+    </div>
+
+    <table id="history-table">
+        <thead>
+            <tr>
+                <th data-column="id">ID</th>
+                <th data-column="temperature">Temperature (°C)</th>
+                <th data-column="humidity">Humidity (%)</th>
+                <th data-column="light_level">Light (%)</th> <!-- Đổi tên cột ánh sáng cho đúng -->
+                <th data-column="timestamp">Time</th> <!-- Đổi tên cột thời gian cho đúng -->
+            </tr>
+        </thead>
+        <tbody id="history-list">
+            <!-- History items will be added here by JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <button type="button" id="prev-page">« Previous Page</button>
+        <span id="page-info">Page 1 / 1</span>
+        <button type="button" id="next-page">Next Page »</button>
+    </div>
+
+    <a href="iot.html">Back to Dashboard</a>
+</div>
+
+<script src="../js/customize.js"></script>
+</body>
+</html>
